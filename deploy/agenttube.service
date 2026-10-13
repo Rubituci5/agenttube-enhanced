@@ -1,0 +1,31 @@
+# Install as /etc/systemd/system/agenttube.service
+# Change paths/user only if deployment root differs from /opt/agenttube.
+[Unit]
+Description=AgentTube IAgora autonomous production (publication gated)
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=agenttube
+Group=agenttube
+WorkingDirectory=/opt/agenttube
+EnvironmentFile=/etc/agenttube/agenttube.env
+ExecStart=/usr/bin/node /opt/agenttube/index.js
+Restart=on-failure
+RestartSec=12
+TimeoutStartSec=120
+TimeoutStopSec=90
+KillSignal=SIGTERM
+UMask=0077
+LimitNOFILE=8192
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+ReadWritePaths=/opt/agenttube/data /opt/agenttube/uploads /opt/agenttube/logs /opt/agenttube/temp /opt/agenttube/config
+Environment=NODE_ENV=production
+Environment=MAX_CONCURRENT_JOBS=1
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,118 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables and credentials
+.env
+.env.local
+.env.production
+config/credentials.json
+config/tokens.json
+config/*.key
+config/*.pem
+
+# API Keys and Secrets
+*.key
+*.pem
+*.cert
+*.crt
+
+# Database
+data/*.db
+data/*.sqlite
+data/*.db-journal
+*.db-shm
+*.db-wal
+
+# Logs
+logs/
+*.log
+
+# Temporary files
+temp/
+tmp/
+uploads/
+*.tmp
+
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Build outputs
+dist/
+build/
+
+# YouTube specific
+*.mp4
+*.mp3
+*.wav
+*.webm
+*.mkv
+*.avi
+
+# Image files (except examples)
+*.jpg
+*.jpeg
+*.png
+*.gif
+!examples/*.png
+!examples/*.jpg
+!assets/youtube-automation-agent.jpg
+
+# Backup files
+*.backup
+*.bak
+backup/
+
+# Cache
+.cache/
+*.cache
+# Generated content outputs
+data/assets/
+data/audio/
+data/captions/
+data/scripts/
+data/videos/
+data/thumbnails/
+
+# Claude worktrees
+.claude/worktrees/
+
+# ChatGPT plan OAuth credentials and temporary files
+config/chatgpt-plan-auth.json
+config/chatgpt-plan-auth.json.*.tmp
+
+# Pixabay secret and licensed media caches
+config/pixabay.json
+config/pixabay.json.*.tmp
+data/stock/
+
+# Conexões OAuth do YouTube por canal (tokens privados)
+config/youtube-channel-backups/
+config/canal-youtube-ativo.json
+
+# Credenciais e backups de projetos OAuth Google alternativos
+config/youtube-project-backups/
+config/canal-youtube-ativo.json
+config/credenciais-google-novo-projeto.json
+
+# Gemini Nano Banana private key, local-only
+/config/gemini-image-auth.json
+/data/models/kokoro/
+/temp/processing/
+
+# User content, SQLite backups, models and generated video assets are NEVER source code
+data/

@@ -1,0 +1,109 @@
+{
+  "channelId": "UC6vui_73qhUfh6fwBQ2uGEA",
+  "googleProject": "259108835778",
+  "handle": "@IAgoranews",
+  "brand": "IAgora",
+  "language": "pt-BR",
+  "editorialVersion": "1.0",
+  "positioning": "Ciência e inteligência artificial contadas como histórias que revelam o futuro, com espaço para mistérios reais e fenômenos intrigantes.",
+  "audience": "Brasileiros curiosos por IA, descobertas científicas reais, tecnologias controversas, mistérios investigados e histórias extraordinárias.",
+  "brandPromise": "Entenda o presente para descobrir o futuro que já começou.",
+  "contentPillars": [
+    {
+      "name": "Inteligência artificial e impacto humano",
+      "weight": 40
+    },
+    {
+      "name": "Descobertas científicas e fenômenos intrigantes",
+      "weight": 25
+    },
+    {
+      "name": "Mistérios reais e investigações históricas",
+      "weight": 20
+    },
+    {
+      "name": "Histórias extraordinárias, invenções e personagens",
+      "weight": 15
+    }
+  ],
+  "lessons": [
+    "Conteúdos anteriores de cristais do tempo, computadores biológicos e IA em conflitos éticos despertaram interesse; priorize temas documentáveis semelhantes.",
+    "Evite misturar reflexões pessoais ou religiosas sem ligação clara com o posicionamento editorial.",
+    "A viralização anterior de vídeos curtos não prova causalidade; teste formatos e meça retenção e recorrência."
+  ],
+  "narrative": {
+    "style": "Minidocumentário investigativo cinematográfico, ritmo dinâmico e suspense factual.",
+    "sequence": [
+      "Abrir com fato extraordinário verificável ou pergunta específica em até 5 segundos.",
+      "Contextualizar época, local e personagens sem saudação genérica.",
+      "Escalar a curiosidade com 2 a 4 descobertas documentadas.",
+      "Revelar o que é conhecido, o que segue controverso e as consequências humanas.",
+      "Encerrar com reflexão ou pergunta relevante, sem enrolação."
+    ],
+    "voice": "Português brasileiro, voz humana e confiável, curiosidade crescente, ritmo firme, pausas antes de revelações, sem dramatização artificial e sem gritaria.",
+    "hookRule": "Comece pela descoberta, paradoxo ou consequência, nunca com 'Olá pessoal', 'no vídeo de hoje' ou pedido de inscrição.",
+    "titleRule": "Títulos em português com uma descoberta concreta e consequência intrigante, até 100 caracteres; sem afirmações sensacionalistas não comprovadas.",
+    "shortFormat": "Shorts de 35 a 60 segundos, vertical, gancho em 2 segundos; um fenômeno por vídeo.",
+    "longFormat": "Vídeos de 6 a 10 minutos, horizontal, narrativa em cinco atos; usar cenas, documentos e fatos concretos para sustentar atenção."
+  },
+  "visual": {
+    "style": "Investigação documental cinematográfica: fotografias históricas, laboratórios, tecnologia, mapas, documentos, elementos científicos pertinentes; movimento sutil e alto contraste.",
+    "palette": [
+      "preto",
+      "azul elétrico",
+      "branco",
+      "amarelo forte",
+      "vermelho",
+      "verde neon"
+    ],
+    "thumbnails": "Manter a identidade REAL das capas de Cristal do Tempo, Lado Sombrio da IA, Cheiro Digital, Transplante de Cabeça e Viajante do Tempo: fotomontagem hiper-realista de alto impacto; personagens e elementos tecnológicos enormes; iluminação dramática azul, vermelha, amarela ou verde; títulos GIGANTES em CAIXA ALTA, pesados e com contorno preto. Combinar branco, amarelo, vermelho e verde neon conforme o assunto. Composição variável e texto integrado à ação. Não substituir por minimalismo, ciano único nem gradientes simples.",
+    "stock": "Buscar imagens específicas ligadas ao fenômeno. Identificar como ilustração ou reconstituição qualquer representação que não seja documentação do acontecimento.",
+    "avoid": [
+      "apresentação de slides estática",
+      "imagens aleatórias que não correspondem à narrativa",
+      "transições chamativas gratuitas",
+      "expressões em inglês em capas brasileiras",
+      "rostos artificiais apresentados como pessoas reais"
+    ],
+    "thumbProduction": "MODO PADRÃO GRATUITO: GPT cria direção visual, palavras-chave de busca e chamadas em português. Pixabay fornece fotos relevantes licenciadas; Sharp produz 3 capas de forte impacto com contraste, fotomontagem e textos gigantes. Operador escolhe uma e confere licença e fidelidade factual. MODO PREMIUM OPCIONAL: Nano Banana com confirmação explícita de possíveis cobranças, ou imagem gerada manualmente no Gemini. Nunca exigir API paga para produzir thumbnail."
+  },
+  "integrity": {
+    "obligations": [
+      "Consultar fontes identificáveis antes de apresentar fatos.",
+      "Separar fato verificado, hipótese, interpretação e ficção especulativa.",
+      "Não inventar pesquisas, dados, datas, fontes, falas ou descobertas.",
+      "Não atribuir a cristais do tempo cura do envelhecimento, viagens no tempo ou outras aplicações não comprovadas.",
+      "Diferenciar comportamentos observados em testes de IA de ações reais ocorridas fora do teste.",
+      "Não apresentar mídia ilustrativa como imagem autêntica de um evento.",
+      "Solicitar revisão humana de afirmações factuais e direitos autorais antes de publicar."
+    ],
+    "forbidden": [
+      "cura milagrosa apresentada como fato",
+      "teoria da conspiração apresentada como evidência",
+      "profecia tecnológica sem fonte",
+      "notícia inventada",
+      "promessa enganosa de tecnologia impossível"
+    ]
+  },
+  "seo": {
+    "language": "pt-BR",
+    "titleExamples": [
+      "A IA que tentou evitar ser desligada: o que realmente aconteceu?",
+      "O primeiro computador vivo já existe. O que ele consegue fazer?",
+      "Cristais do tempo: a descoberta real por trás do mistério"
+    ],
+    "description": "Em português brasileiro. Começar pelo resumo do tema; em seguida evidências, ressalvas, créditos das fontes e convite breve para comentar.",
+    "tags": "Termos específicos do assunto e intenção de busca, sem hashtags excessivas nem tags não relacionadas."
+  },
+  "workflow": {
+    "publication": "Produção e publicação automática desativadas até aprovação humana.",
+    "approval": "Cada publicação exige revisão de fatos, adequação visual e direitos sobre materiais.",
+    "audio": "Preferir narração ElevenLabs de voz PT-BR somente após escolher Voice ID e validar o serviço; não consumir créditos automaticamente durante configuração.",
+    "feedback": "Comparar visualizações, retenção, cliques e inscritos de Shorts e longos por tema antes de ajustar os pilares."
+  },
+  "audio": {
+    "voice": "Kokoro pt-BR, narração natural",
+    "backgroundMusic": "padrão: Cinematic Trailer, ArtArea_Studio, Envato Elements item ABL93GX; aplicar fade-in/fade-out e ducking sob narração, volume moderado. Arquivar certificado DX9RCL6N7H (projeto Agape) e registrar licença própria por End Product antes de publicar cada novo vídeo. Alternativa CC0 se BACKGROUND_MUSIC_SOURCE=cc0.",
+    "approval": "A mixagem musical e direitos devem constar na revisão antes da publicação."
+  }
+}

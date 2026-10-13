@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="pt-BR" class="preboot">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#06080c">
+  <title>Estúdio de Automação YouTube</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23ff4d5e'/%3E%3Cpath d='M12 9.5v13l11-6.5z' fill='white'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="aurora" aria-hidden="true"></div>
+  <div class="spotlight" aria-hidden="true"></div>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#overview" aria-label="Início do Estúdio de Automação YouTube">
+        <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg></span>
+        <span><strong id="brand-name">Estúdio de Automação</strong><small>Central de operação</small></span>
+      </a>
+      <p class="sidebar-label" aria-hidden="true">Área de trabalho</p>
+      <nav aria-label="Navegação principal">
+        <button class="nav-item active" data-view="overview"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7.5" height="9.5" rx="1.5"/><rect x="13.5" y="3" width="7.5" height="5.5" rx="1.5"/><rect x="13.5" y="11.5" width="7.5" height="9.5" rx="1.5"/><rect x="3" y="15.5" width="7.5" height="5.5" rx="1.5"/></svg> Visão geral</button>
+        <button class="nav-item" data-view="operator"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M18.7 5.3l-2.1 2.1M7.4 16.6l-2.1 2.1"/></svg> Operador autônomo</button>
+        <button class="nav-item" data-view="pipeline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h10M4 12h16M4 18h7"/><circle cx="17.5" cy="6" r="2"/><circle cx="14.5" cy="18" r="2"/></svg> Produção <b id="review-badge" class="badge hidden">0</b></button>
+        <button class="nav-item" data-view="calendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16.5" rx="2"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4M7.5 13.5h3v3h-3z"/></svg> Calendário e ideias</button>
+        <button class="nav-item" data-view="analytics"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5h17"/><path d="M6.5 20V11M11 20V4.5M15.5 20v-7M20 20V8.5"/></svg> Análises</button>
+        <button class="nav-item" data-view="engagement"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 01-9.1 8.4 9 9 0 01-3.8-.9L3 20l1-4.9A8.4 8.4 0 1121 11.5z"/><path d="M8 10h8M8 13.5h5"/></svg> Engajamento</button>
+        <button class="nav-item" data-view="readiness"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.8l7.5 3v6c0 4.8-3.2 8.2-7.5 9.4-4.3-1.2-7.5-4.6-7.5-9.4v-6z"/><path d="M8.8 12.2l2.3 2.3 4.4-4.6"/></svg> Prontidão de produção</button>
+        <button class="nav-item" data-view="settings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 00.34 1.87l.06.06a2 2 0 11-2.83 2.83l-.06-.06A1.7 1.7 0 0015 19.4a1.7 1.7 0 00-1 1.55V21a2 2 0 11-4 0v-.09A1.7 1.7 0 009 19.4a1.7 1.7 0 00-1.87.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06A1.7 1.7 0 004.6 15a1.7 1.7 0 00-1.55-1H3a2 2 0 110-4h.09A1.7 1.7 0 004.6 9a1.7 1.7 0 00-.33-1.87l-.06-.06a2 2 0 112.83-2.83l.06.06A1.7 1.7 0 009 4.6a1.7 1.7 0 001-1.55V3a2 2 0 114 0v.09a1.7 1.7 0 001 1.51 1.7 1.7 0 001.87-.34l.06-.06a2 2 0 112.83 2.83l-.06.06A1.7 1.7 0 0019.4 9c.28.66.9 1.05 1.55 1H21a2 2 0 110 4h-.09a1.7 1.7 0 00-1.51 1z"/></svg> Configurações do canal</button>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="system-pill"><i id="system-dot"></i><span id="system-label">Conectando…</span></div>
+        <button id="automation-toggle" class="button secondary full">Pausar automação</button>
+      </div>
+    </aside>
+
+    <main>
+      <header class="topbar">
+        <div>
+          <p class="eyebrow" id="view-eyebrow">VISÃO GERAL DO OPERADOR</p>
+          <h1 id="view-title">Saiba o que vem a seguir.</h1>
+        </div>
+        <div class="top-actions">
+          <button id="refresh-button" class="icon-button" title="Atualizar painel" aria-label="Atualizar painel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 11-2.64-6.36"/><path d="M21 3v6h-6"/></svg></button>
+          <button id="generate-button" class="button primary">＋ Criar vídeo</button>
+        </div>
+      </header>
+
+      <div id="loading" class="loading-bar"></div>
+      <div id="toast" class="toast hidden" role="status"></div>
+
+      <section id="overview-view" class="view active">
+        <div id="setup-banner" class="setup-banner hidden"><div><strong>Conclua a configuração para ativar seus agentes</strong><p>O painel está pronto, mas a geração e a publicação permanecerão desativadas até configurar as credenciais.</p></div><code>npm run walkthrough</code></div>
+        <div class="stats-grid">
+          <article class="stat"><span>Precisa de revisão</span><strong id="stat-review">—</strong><small>aguardando decisão</small></article>
+          <article class="stat"><span>Agendados</span><strong id="stat-scheduled">—</strong><small>próximos 30 dias</small></article>
+          <article class="stat"><span>Publicados</span><strong id="stat-published">—</strong><small>desde o início</small></article>
+          <article class="stat"><span>Pontuação média</span><strong id="stat-score">—</strong><small>desempenho recente</small></article>
+        </div>
+
+        <div class="overview-grid">
+          <article class="panel review-panel">
+            <div class="panel-heading"><div><p class="eyebrow">FILA DE DECISÕES</p><h2>Aguardando você</h2></div><button class="text-button" data-go="pipeline">Ver produção →</button></div>
+            <div id="review-list" class="card-list"></div>
+          </article>
+          <article class="panel">
+            <div class="panel-heading"><div><p class="eyebrow">EM ANDAMENTO</p><h2>Tarefas de geração</h2></div></div>
+            <div id="job-list" class="card-list compact"></div>
+          </article>
+        </div>
+
+        <div class="overview-grid lower">
+          <article class="panel">
+            <div class="panel-heading"><div><p class="eyebrow">PRÓXIMOS</p><h2>Calendário de publicações</h2></div><button class="text-button" data-go="calendar">Abrir calendário →</button></div>
+            <div id="next-schedule" class="timeline"></div>
+          </article>
+          <article class="panel">
+            <div class="panel-heading"><div><p class="eyebrow">ATIVIDADES</p><h2>Atividades recentes</h2></div></div>
+            <div id="notification-list" class="activity-list"></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="operator-view" class="view">
+        <div class="section-intro"><div><h2>Operador Autônomo do Canal</h2><p>Defina o objetivo uma vez. O Lumen pesquisa, planeja, produz e gerencia a operação do canal.</p></div><span id="operator-strategy-status" class="status">Não configurado</span></div>
+        <div class="operator-grid">
+          <form id="strategy-form" class="panel settings-form">
+            <div class="panel-heading"><div><p class="eyebrow">DIRETRIZES DO CANAL</p><h2>Qual é o objetivo deste canal?</h2></div></div>
+            <div class="form-grid">
+              <label class="full-row"><span>Objetivo</span><textarea name="objective" rows="3" maxlength="1000" placeholder="Tornar-se o canal mais confiável de orientações práticas para pequenas empresas que adotam IA." required></textarea></label>
+              <label class="full-row"><span>Público</span><textarea name="audience" rows="2" maxlength="500" placeholder="Donos e gestores de empresas de serviços com 5 a 50 pessoas" required></textarea></label>
+              <label class="full-row"><span>Proposta de valor</span><textarea name="valueProposition" rows="2" maxlength="1000" placeholder="Orientações claras e testadas que as pessoas possam aplicar nesta semana"></textarea></label>
+              <label class="full-row"><span>Pilares de conteúdo</span><input name="contentPillars" placeholder="Fluxos com IA, guias de automação, análises de ferramentas" required><small>Separe de 1 a 8 temas principais com vírgulas.</small></label>
+              <label><span>Vídeos por semana</span><input name="cadencePerWeek" type="number" min="1" max="7" value="1"></label>
+              <label><span>Vídeos por planejamento</span><input name="videosPerRun" type="number" min="1" max="5" value="1"></label>
+              <label><span>Formato padrão</span><select name="defaultFormat"><option value="explainer">Explicativo</option><option value="tutorial">Tutorial</option><option value="list">Lista</option><option value="review">Análise</option><option value="story">História</option></select></label>
+              <label><span>Duração padrão</span><select name="defaultLength"><option value="short">Curto · 2–4 min</option><option value="medium">Médio · 8–12 min</option><option value="long">Longo · 15–20 min</option></select></label>
+              <label><span>Meta principal</span><select name="primaryKpi"><option value="views">Visualizações</option><option value="watch_hours">Horas assistidas</option><option value="subscribers">Inscritos líquidos</option><option value="engagement">Taxa de engajamento</option><option value="revenue">Receita estimada</option></select></label>
+              <label><span>Valor da meta</span><input name="targetValue" type="number" min="0.01" step="0.01" placeholder="100"></label>
+              <label><span>Período da meta</span><select name="targetWindowDays"><option value="7">7 dias</option><option value="28" selected>28 dias</option><option value="90">90 dias</option><option value="365">365 dias</option></select></label>
+              <label><span>Orçamento mensal de produção</span><span class="currency-input"><select name="outcomeCurrency" aria-label="Outcome currency"><option value="USD">USD</option><option value="CAD">CAD</option><option value="EUR">EUR</option><option value="GBP">GBP</option><option value="AUD">AUD</option></select><input name="monthlyBudget" type="number" min="0" step="0.01" placeholder="Opcional"></span></label>
+              <label class="full-row"><span>Contexto da meta</span><input name="successMetric" maxlength="300" placeholder="Atrair inscritos qualificados que voltem para aprender automações práticas"><small>Usado no planejamento junto à meta principal mensurável.</small></label>
+              <label class="full-row"><span>Limites e restrições</span><textarea name="constraints" rows="3" maxlength="2000" placeholder="Sem exageros ou estatísticas não verificadas; explicar custos e limitações."></textarea></label>
+            </div>
+            <p class="callout">O operador utiliza tendências do YouTube, concorrentes configurados e histórico do canal. A publicação continua sujeita à revisão de qualidade, fatos, direitos e aprovação.</p>
+            <div class="form-actions"><button type="submit" class="button secondary">Salvar estratégia</button><button id="activate-operator-button" type="button" class="button primary">Ativar e executar agora</button><button id="pause-operator-button" type="button" class="button danger hidden">Pausar operador</button></div>
+          </form>
+          <div class="operator-side">
+            <article class="panel">
+              <div class="panel-heading"><div><p class="eyebrow">EXECUÇÃO ATUAL</p><h2 id="operator-run-title">Aguardando estratégia</h2></div><div class="run-actions"><button id="resume-operator-run" class="text-button approve hidden">Retomar execução</button><button id="cancel-operator-run" class="text-button hidden">Interromper execução</button></div></div>
+              <div id="operator-run-summary"></div>
+            </article>
+            <article class="panel">
+              <div class="panel-heading"><div><p class="eyebrow">PLANEJAMENTO EDITORIAL</p><h2>O que o Lumen decidiu produzir</h2></div></div>
+              <div id="operator-plan" class="plan-list"></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="pipeline-view" class="view">
+        <div class="section-intro"><div><h2>Fluxo de produção</h2><p>Cada vídeo produzido, seu estado real e a próxima ação disponível.</p></div><select id="pipeline-filter"><option value="all">Todo o conteúdo</option><option value="needs_review">Precisa de revisão</option><option value="needs_attention">Precisa de atenção</option><option value="approved">Aprovados</option><option value="published">Publicados</option></select></div>
+        <div id="pipeline-list" class="pipeline-list"></div>
+      </section>
+
+      <section id="calendar-view" class="view">
+        <div class="split-heading"><div><h2>Calendário e banco de ideias</h2><p>Organize a fila antes de iniciar a geração.</p></div><button id="add-idea-button" class="button secondary">＋ Adicionar ideia</button></div>
+        <div class="calendar-grid">
+          <article class="panel"><div class="panel-heading"><div><p class="eyebrow">AGENDADOS</p><h2>Próximas publicações</h2></div></div><div id="calendar-list" class="calendar-list"></div></article>
+          <article class="panel"><div class="panel-heading"><div><p class="eyebrow">IDEIAS PENDENTES</p><h2>Ideias de conteúdo</h2></div></div><div id="idea-list" class="idea-list"></div></article>
+        </div>
+      </section>
+
+      <section id="analytics-view" class="view">
+        <div class="section-intro"><div><h2>Indicadores de desempenho</h2><p>Dados que orientam decisões, não apenas números de vaidade.</p></div></div>
+        <article class="panel channel-metrics-panel">
+          <div class="panel-heading">
+            <div><p class="eyebrow">YOUTUBE · DADOS REAIS</p><h2 id="channel-metrics-title">Métricas do canal conectado</h2></div>
+            <button type="button" id="refresh-channel-metrics" class="button secondary small">Atualizar métricas</button>
+          </div>
+          <div class="stats-grid channel-live-stats">
+            <article class="stat"><span>Inscritos</span><strong id="channel-subscribers">—</strong><small>Canal completo</small></article>
+            <article class="stat"><span>Visualizações</span><strong id="channel-views">—</strong><small>Total acumulado</small></article>
+            <article class="stat"><span>Vídeos</span><strong id="channel-videos">—</strong><small>Canal completo</small></article>
+            <article class="stat"><span>Visualizações · 28 dias</span><strong id="channel-views-recent">—</strong><small id="channel-metrics-period">Dados de Analytics</small></article>
+            <article class="stat"><span>Horas assistidas · 28 dias</span><strong id="channel-watch-hours">—</strong><small>Tempo de exibição</small></article>
+            <article class="stat"><span>Inscritos líquidos · 28 dias</span><strong id="channel-net-subscribers">—</strong><small>Ganhos menos perdas</small></article>
+          </div>
+          <p id="channel-metrics-status" class="callout" aria-live="polite">Consultando o YouTube...</p>
+          <a id="channel-enable-analytics" class="text-button hidden" href="https://console.cloud.google.com/apis/library/youtubeanalytics.googleapis.com" target="_blank" rel="noopener noreferrer">Ativar YouTube Analytics API no Google Cloud ↗</a>
+        </article>
+        <div class="stats-grid analytics-stats">
+          <article class="stat"><span>Vídeos analisados</span><strong id="analytics-total">—</strong><small>últimos 30 dias</small></article>
+          <article class="stat"><span>Pontuação de desempenho</span><strong id="analytics-score">—</strong><small>média do canal</small></article>
+          <article class="stat wide"><span>Ação recomendada</span><strong id="analytics-action" class="recommendation">Reunindo dados para recomendar a próxima ação.</strong></article>
+        </div>
+        <article class="panel outcome-studio">
+          <div class="panel-heading"><div><p class="eyebrow">OUTCOME &amp; ROI STUDIO</p><h2>O canal está atingindo seus objetivos?</h2></div><span id="outcome-status" class="status">Não configurado</span></div>
+          <div id="outcome-summary" class="outcome-summary"></div>
+          <div id="outcome-economics" class="outcome-economics"></div>
+          <div id="outcome-breakdowns" class="outcome-breakdowns"></div>
+          <p id="outcome-policy" class="callout">Defina a meta principal no Operador Autônomo para conectar o aprendizado a um objetivo mensurável.</p>
+        </article>
+        <div class="learning-grid">
+          <article class="panel">
+            <div class="panel-heading"><div><p class="eyebrow">REFERÊNCIA DO CANAL</p><h2>O que mostram os resultados reais</h2></div><span id="learning-snapshot-count" class="status">0 medições</span></div>
+            <div id="learning-baseline" class="baseline-grid"></div>
+            <p class="callout">Somente métricas reais do YouTube entram nesta análise. Dados simulados não são considerados.</p>
+          </article>
+          <article class="panel">
+            <div class="panel-heading"><div><p class="eyebrow">O QUE O AGENTE APRENDEU</p><h2>Revisar recomendações</h2></div><span id="learning-approved-count" class="status">0 aprovadas</span></div>
+            <div id="learning-recommendations" class="learning-list"></div>
+          </article>
+        </div>
+        <article class="panel growth-experiment-studio">
+          <div class="panel-heading experiment-heading">
+            <div><p class="eyebrow">EXPERIMENTOS CONTROLADOS DE CRESCIMENTO</p><h2>Valide o próximo passo</h2><p>Teste variações aprovadas de títulos e miniaturas com dados reais do YouTube e aprove a vencedora separadamente.</p></div>
+            <span id="experiment-status" class="status">0 em andamento</span>
+          </div>
+          <form id="experiment-create-form" class="experiment-create-form">
+            <label><span>Produção publicada</span><select name="productionId" id="experiment-candidate" required></select></label>
+            <label><span>Horas por variação</span><select name="armDurationHours"><option value="24">24 horas</option><option value="48" selected>48 horas</option><option value="72">72 horas</option></select></label>
+            <label><span>Impressões mínimas</span><input name="minImpressions" type="number" min="100" max="1000000" step="100" value="1000" required></label>
+            <button id="experiment-create-button" class="button secondary small" type="submit">Criar plano de teste</button>
+          </form>
+          <div id="growth-experiments" class="growth-experiment-list"></div>
+          <p id="experiment-policy" class="callout"></p>
+        </article>
+        <article class="panel retention-studio">
+          <div class="panel-heading retention-heading">
+            <div><p class="eyebrow">RETENÇÃO POR CENA</p><h2>Onde os espectadores permanecem e saem</h2><p>Pontos reais de retenção do YouTube associados à linha do tempo de produção.</p></div>
+            <div class="retention-controls">
+              <label><span class="sr-only">Medição de retenção</span><select id="retention-snapshot-select" aria-label="Selecione uma medição de retenção"></select></label>
+              <button id="refresh-retention-button" class="button secondary small" disabled>Atualizar curva</button>
+            </div>
+          </div>
+          <div id="retention-meta" class="scene-summary"></div>
+          <div id="retention-chart" class="retention-chart"></div>
+          <div id="retention-scenes" class="retention-scene-list"></div>
+          <p class="callout retention-policy">Scene findings remain evidence only. They influence future scripts and pacing only after their recommendation is approved above; published videos are never edited automatically.</p>
+        </article>
+        <article class="panel"><div class="panel-heading"><div><p class="eyebrow">MELHORES DESEMPENHOS</p><h2>O que está funcionando</h2></div></div><div id="top-performers" class="card-list"></div></article>
+        <article class="panel activation-panel"><div class="panel-heading"><div><p class="eyebrow">ATIVAÇÃO LOCAL</p><h2>Primeiros passos</h2></div></div><p class="callout">Calculado localmente a partir do banco de dados e dos vídeos. Nada é enviado sem ativação explícita da telemetria anônima.</p><div id="activation-list" class="timeline"></div></article>
+      </section>
+
+      <section id="engagement-view" class="view">
+        <div class="engagement-grid">
+          <article class="panel">
+            <div class="panel-heading">
+              <div><p class="eyebrow">VOZ DA AUDIÊNCIA</p><h2>O que os comentários revelam</h2></div>
+              <span class="status" id="engagement-posting-status">publicação bloqueada</span>
+            </div>
+            <p id="engagement-policy" class="engagement-policy"></p>
+            <div class="panel-heading">
+              <select id="engagement-video-select" aria-label="Choose a synced video"></select>
+              <button id="engagement-sync-button" class="button secondary small">Sincronizar agora</button>
+            </div>
+            <div id="engagement-meta" class="engagement-meta"></div>
+            <div id="engagement-themes"></div>
+          </article>
+          <article class="panel">
+            <div class="panel-heading">
+              <div><p class="eyebrow">FILA DE RESPOSTAS</p><h2>Aprove antes de publicar</h2></div>
+              <span class="status" id="engagement-drafts-count">0 rascunhos</span>
+            </div>
+            <div class="panel-heading"><button id="engagement-draft-button" class="button secondary small">Respostas em rascunho</button></div>
+            <div id="engagement-drafts"></div>
+          </article>
+        </div>
+        <div class="engagement-grid">
+          <article class="panel">
+            <div class="panel-heading">
+              <div><p class="eyebrow">PRECISA DE ATENÇÃO</p><h2>Possíveis spams e golpes</h2></div>
+              <span class="status warning" id="engagement-attention-count">0 sinalizados</span>
+            </div>
+            <div id="engagement-attention"></div>
+          </article>
+          <article class="panel">
+            <div class="panel-heading">
+              <div><p class="eyebrow">IDEIAS DA AUDIÊNCIA</p><h2>Aprove antes de enviar ao operador</h2></div>
+              <span class="status" id="engagement-ideas-count">0 pendentes</span>
+            </div>
+            <div id="engagement-ideas"></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="readiness-view" class="view">
+        <div class="section-intro readiness-intro">
+          <div><h2>Prontidão de produção</h2><p>Verifique o caminho real de produção e envio ao YouTube antes que a automação consuma tempo ou créditos.</p></div>
+          <span id="readiness-status" class="status unverified">Não verificado</span>
+        </div>
+        <article class="panel readiness-hero">
+          <div>
+            <p class="eyebrow">TESTE DE VALIDAÇÃO</p>
+            <h2 id="readiness-title">Valide a produção sem enviar vídeos.</h2>
+            <p id="readiness-summary">The check makes small live text and narration requests, verifies channel access, builds a local audio/video MP4, and validates queued metadata. It never creates or uploads a YouTube video.</p>
+            <div id="readiness-meta" class="meta-line">Nenhum teste de prontidão registrado.</div>
+          </div>
+          <div class="readiness-actions">
+            <label class="toggle paid-probe"><input id="paid-image-probe" type="checkbox"><span></span> Incluir teste pago de imagem</label>
+            <label class="toggle paid-probe"><input id="paid-video-probe" type="checkbox"><span></span> Incluir teste pago de vídeo</label>
+            <button id="run-readiness-button" class="button primary">Executar verificação</button>
+            <small>Testes reais dos provedores podem consumir parte da cota ou créditos.</small>
+          </div>
+        </article>
+        <div id="readiness-checks" class="readiness-grid"></div>
+        <p class="callout readiness-policy">A recorded blocking failure stops autonomous generation and publishing until a later run passes. An unverified or stale result remains visible but does not interrupt manual work.</p>
+      </section>
+
+      <section id="settings-view" class="view">
+        <div class="section-intro"><div><h2>Configurações do canal</h2><p>Estas diretrizes orientam todos os agentes da produção.</p></div></div>
+        <article class="panel" style="padding:22px; margin-bottom:18px;">
+          <h3>ChatGPT Pro · Login oficial</h3>
+          <p>Conecte sua conta ChatGPT para pesquisa e roteiros usando a franquia do plano. Imagens não estão incluídas; narração e montagem usam os recursos do ambiente de produção.</p>
+          <p id="chatgpt-connect-status" aria-live="polite">Verificando conexão...</p>
+          <div class="form-actions">
+            <button id="chatgpt-connect" type="button" class="button primary">Continuar com ChatGPT</button>
+            <a class="button secondary" href="https://chatgpt.com/#settings/Usage" target="_blank" rel="noopener noreferrer">Gerenciar uso</a>
+          </div>
+        </article>
+        <article class="panel" style="padding:22px; margin-bottom:18px;">
+          <h3>Pixabay · Vídeos reais e gratuitos</h3>
+          <p>O agente pesquisa até três cenas relevantes por vídeo, baixa os MP4 autorizados, monta com o FFmpeg e guarda a origem/licença. Buscas ficam em cache por pelo menos 24 horas. Sem downloads em massa.</p>
+          <p id="pixabay-connect-status" aria-live="polite">Verificando...</p>
+          <div class="form-grid">
+            <label class="full-row"><span>Chave da API Pixabay</span><input id="pixabay-api-key" type="password" autocomplete="off" placeholder="Cole sua chave aqui"><small>A chave será salva de forma protegida, sem aparecer novamente no painel.</small></label>
+          </div>
+          <div class="form-actions">
+            <button id="pixabay-save-key" type="button" class="button primary">Conectar Pixabay</button>
+            <a class="button secondary" href="https://pixabay.com/api/docs/" target="_blank" rel="noopener noreferrer">Obter chave gratuita</a>
+          </div>
+        </article>
+        <form id="profile-form" class="panel settings-form">
+          <div class="form-grid">
+            <label><span>Nome do canal</span><input name="channelName" maxlength="120" required></label>
+            <label><span>Formato padrão</span><select name="defaultStyle"><option value="explainer">Explicativo</option><option value="tutorial">Tutorial</option><option value="list">Lista</option><option value="review">Análise</option><option value="story">História</option></select></label>
+            <label class="full-row"><span>Objetivo do canal</span><textarea name="goal" rows="2"></textarea></label>
+            <label class="full-row"><span>Público-alvo</span><textarea name="targetAudience" rows="2"></textarea></label>
+            <label><span>Tom de voz da marca</span><input name="brandVoice" placeholder="Claro, confiável e envolvente"></label>
+            <label><span>Fuso horário</span><input name="timezone" placeholder="America/Chicago"></label>
+            <label class="full-row"><span>Chamada para ação padrão</span><input name="callToAction"></label>
+            <label class="full-row"><span>Direção visual</span><input name="visualStyle"></label>
+            <label class="full-row"><span>Temas ou palavras bloqueadas</span><input name="bannedTopics" placeholder="termo um, termo dois"><small>A revisão de qualidade bloqueia conteúdos com estes termos.</small></label>
+          </div>
+          <div class="settings-row">
+            <label class="toggle"><input id="approval-required" type="checkbox"><span></span> Exigir aprovação antes de agendar</label>
+            <label class="toggle"><input id="notifications-enabled" type="checkbox"><span></span> Salvar notificações do operador</label>
+          </div>
+          <div class="form-grid video-provider-settings">
+            <label><span>Provedor de vídeo</span><select name="videoProvider"><option value="slideshow">Slides locais · sem custo de provedor</option><option value="pixabay">Pixabay · cenas reais grátis + FFmpeg</option><option value="auto">Seleção automática do provedor</option><option value="seedance">ByteDance Seedance 2.5</option><option value="minimax_h3">MiniMax H3</option><option value="google_omni">Google Gemini Omni Flash</option><option value="kling">Kuaishou Kling 3.0 Omni</option><option value="wan">Alibaba Wan 2.7</option></select><small id="video-provider-status">As credenciais do provedor são verificadas durante a execução.</small></label>
+            <label><span>Modo de geração</span><select name="videoGenerationMode"><option value="hybrid">Híbrido · clipes gerados + montagem local</option><option value="slideshow">Somente slides locais</option></select></label>
+            <label><span>Duração dos clipes</span><input name="videoClipDuration" type="number" min="3" max="30" step="1"></label>
+            <label><span>Limite de segundos pagos</span><input name="videoMaxGeneratedSeconds" type="number" min="0" max="600" step="1"><small>Máximo de segundos gerados por provedores pagos em cada produção.</small></label>
+          </div>
+          <div class="form-actions"><button type="submit" class="button primary">Salvar configurações do canal</button><button id="api-key-button" type="button" class="button secondary">Configurar chave de API do painel</button></div>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <dialog id="generate-dialog" class="dialog">
+    <form id="generate-form" method="dialog">
+      <div class="dialog-heading"><div><p class="eyebrow">NOVA TAREFA DE GERAÇÃO</p><h2>Criar vídeo</h2></div><button type="button" class="close-button" data-close>×</button></div>
+      <label><span>Tema <small>opcional; deixe em branco para o agente escolher</small></span><input name="topic" maxlength="200" placeholder="Como equipes pequenas podem automatizar tarefas repetitivas"></label>
+      <div class="form-grid two">
+        <label><span>Formato</span><select name="style"><option value="explainer">Explicativo</option><option value="tutorial">Tutorial</option><option value="list">Lista</option><option value="review">Análise</option><option value="story">História</option></select></label>
+        <label><span>Duração</span><select name="length"><option value="short">Curto · 2–4 min</option><option value="medium" selected>Médio · 8–12 min</option><option value="long">Longo · 15–20 min</option></select></label>
+      </div>
+      <p class="callout">A geração acontece em segundo plano. Acompanhe cada etapa e cancele entre etapas.</p>
+      <div class="form-actions"><button type="submit" class="button primary">Iniciar geração</button><button type="button" class="button ghost" data-close>Cancelar</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="content-dialog" class="dialog content-dialog">
+    <div id="content-detail"></div>
+  </dialog>
+
+  <dialog id="idea-dialog" class="dialog">
+    <form id="idea-form" method="dialog">
+      <div class="dialog-heading"><div><p class="eyebrow">IDEIAS PENDENTES</p><h2>Adicionar ideia de conteúdo</h2></div><button type="button" class="close-button" data-close>×</button></div>
+      <label><span>Tema</span><input name="topic" maxlength="200" required></label>
+      <label><span>Abordagem</span><textarea name="angle" rows="3" placeholder="O que torna esta abordagem diferente?"></textarea></label>
+      <label><span>Por que vale a pena produzir</span><textarea name="rationale" rows="2"></textarea></label>
+      <label><span>Formato</span><select name="style"><option value="explainer">Explicativo</option><option value="tutorial">Tutorial</option><option value="list">Lista</option><option value="review">Análise</option><option value="story">História</option></select></label>
+      <div class="form-actions"><button type="submit" class="button primary">Adicionar às ideias pendentes</button><button type="button" class="button ghost" data-close>Cancelar</button></div>
+    </form>
+  </dialog>
+
+  <script src="pt-br.js" defer></script>
+  <script src="app.js" defer></script>
+  <script src="enhance.js" defer></script>
+</body>
+</html>

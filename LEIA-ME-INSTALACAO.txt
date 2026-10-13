@@ -1,0 +1,63 @@
+YOUTUBE AGENT (AgentTube) - Instalacao local
+
+Projeto: https://github.com/darkzOGx/youtube-automation-agent
+Pasta: /Users/rubituci/Documents/YOUTUBE AGENT
+Versao: 2.10.0
+
+1. Para abrir o painel, clique duas vezes em INICIAR YOUTUBE AGENT.command
+   Ou acesse http://localhost:3456 no proprio Mac, se o agente estiver rodando.
+2. Para ligar YouTube e IA, clique duas vezes em CONFIGURAR YOUTUBE AGENT.command
+   e siga as etapas no Terminal. Credenciais: conta Google/YouTube com OAuth
+   e chave de ao menos um provedor de texto (por exemplo, Gemini ou OpenAI).
+3. Antes de automatizar publicacoes, confira as configuracoes e revisoes
+   no painel. Alguns provedores de IA podem ter custos por uso.
+
+Instalacao validada: 47 testes aprovados; 0 falhas.
+O painel esta restrito a 127.0.0.1 (acessivel apenas neste Mac).
+Arquivos de credenciais e .env nao devem ser enviados a terceiros.
+
+Comandos manuais (Terminal):
+  cd '/Users/rubituci/Documents/YOUTUBE AGENT'
+  npm run walkthrough
+  npm start
+  npm test
+
+INTEGRAÇÃO OFICIAL COM O CHATGPT PRO (OUTUBRO 2026)
+==================================================
+A opção de login OAuth está incorporada ao AgentTube. Acesse Channel setup
+no painel e clique em 'Continuar com ChatGPT', ou clique duas vezes em
+'CONECTAR CHATGPT PRO.command' nesta pasta. Escolha sua conta ChatGPT Pro e
+AUTORIZE o compartilhamento do plano com o AgentTube. Esse consentimento é
+separado do login e pode ser revogado em Configurações do ChatGPT.
+
+Esta integração só cobre solicitações de TEXTO (pesquisa, estratégia,
+roteiros e SEO) pelo Responses API. Ela não inclui TTS, geração de imagens
+ou geração de vídeos: a montagem é feita com FFmpeg e a voz local usando
+'say' do macOS. Visuais locais sem API são alternativas mais simples.
+
+Configuração: CHATGPT_PLAN_ENABLED=true, LOCAL_MAC_TTS=true no arquivo .env.
+A chave sk-proj antiga foi DESATIVADA (linha comentada) para evitar uso
+acidental da API cobrada separadamente. O login guarda tokens OAuth em
+config/chatgpt-plan-auth.json, protegido por permissões de arquivo.
+
+Comandos:
+  npm run chatgpt:login
+  npm run chatgpt:status
+
+O login depende da sua autorização no navegador, que nunca é realizada
+automaticamente por este sistema. Sem autenticação aprovada e sem OAuth
+do YouTube, o painel continua em modo de configuração, sem publicação.
+Documentação OpenAI: https://developers.openai.com/siwc/token-sharing-open-source
+
+PIXABAY, VÍDEOS REAIS (API GRATUITA)
+-----------------------------------
+1. Com o AgentTube aberto em http://localhost:3456, clique em Channel setup.
+2. Na seção Pixabay, abra https://pixabay.com/api/docs/ (logado na conta Pixabay) e copie a sua chave.
+3. Cole a chave diretamente no painel e clique em Conectar Pixabay. Ela fica salva apenas neste Mac em config/pixabay.json (permissão 600).
+4. O provedor Pixabay é ativado automaticamente. Se alterar o provedor depois, volte para Pixabay na seção Video provider e salve.
+5. Ao criar vídeo, o agente busca no máximo 3 termos do roteiro, baixa até 3 clipes do Pixabay e alterna os clipes conforme a duração da narração. FFmpeg faz montagem local.
+6. Registros da fonte, autor e licença são preservados em data/stock/pixabay/manifests. Cache de buscas dura ao menos 24 horas; clipes já baixados são reutilizados.
+7. Confira sempre relevância das cenas, direitos aplicáveis e vídeo final antes de aprovar publicação. Nenhum vídeo será enviado automaticamente enquanto a automação estiver pausada.
+8. Para executar verificações locais sem chave ou download externo: npm run test:pixabay
+
+Limites: sem chave Pixabay o modo stock não funciona. Em buscas sem resultados o sistema tenta o slideshow local. A API Pixabay não permite downloads automatizados sistemáticos em massa. Não redistribua clipes isolados.
